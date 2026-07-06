@@ -24,5 +24,8 @@
         "BackdropTemplateMixin"
     ],
     "Lua.workspace.checkThirdParty": false,
-    "Lua.telemetry.enable": false
+    "Lua.telemetry.enable": false,
+    "cSpell.words": [
+        "empaquetado"
+    ]
 }
