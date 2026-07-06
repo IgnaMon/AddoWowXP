@@ -20,92 +20,93 @@ Addon para World of Warcraft que muestra tu avance de nivel con porcentaje y bar
 
 ## Estructura del proyecto
 
-# LevelPercent - Proyecto para Visual Studio Code
+# LevelPercent — Addon para World of Warcraft
 
-Addon para World of Warcraft que muestra tu avance de nivel con porcentaje y barra visual.
+LevelPercent muestra el porcentaje de experiencia de tu personaje con una barra visual y texto. Es ligero, redimensionable y configurable desde comandos dentro del juego.
 
-## Novedades versión 1.1.0
+Características principales
 
-- Barra visual de progreso.
-- Colores según porcentaje:
-  - Rojo: menos de 35%.
-  - Amarillo: entre 35% y 70%.
-  - Verde: sobre 70%.
-- XP restante visible.
-- Tooltip con XP actual, XP restante, XP/h de la sesión y ETA estimada.
-- Redimensionable desde la esquina inferior derecha.
-- Comandos nuevos para texto, XP restante y decimales.
+- Barra visual del progreso de nivel.
+- Texto con porcentaje y valores de XP.
+- Colores según porcentaje: rojo/amarillo/verde.
+- Muestra XP restante y estimación (ETA) de subida de nivel.
+- Tooltip con detalles (XP actual, restante, XP/h).
+- Se puede mover, bloquear y redimensionar.
 
-## Estructura del proyecto
+Novedades (v1.1.0)
+
+- Barra visual de progreso y colores por rango.
+- XP restante visible y tooltip con estadísticas de sesión.
+- Nuevos comandos para texto y formato de decimales.
+
+Estructura del proyecto
 
 ```text
 LevelPercent-VSCode/
-├─ LevelPercent/
-│  ├─ LevelPercent.toc
-│  └─ LevelPercent.lua
-├─ .vscode/
-│  ├─ extensions.json
-│  ├─ settings.json
-│  └─ tasks.json
-├─ docs/
-│  └─ instalacion.md
-├─ scripts/
-│  └─ package.py
+├─ LevelPercent/                # Código del addon (TOC y Lua)
+├─ .vscode/                     # Configuración del espacio de trabajo (opcional)
+├─ docs/                        # Documentación (instalación)
+├─ scripts/                     # Scripts de empaquetado
 ├─ .gitignore
-├─ LevelPercent.code-workspace
+├─ LevelPercent.code-workspace   # Workspace para VS Code
 └─ README.md
 ```
 
-## Cómo abrirlo en Visual Studio Code
+Instalación (en el cliente de WoW)
 
-1. Descomprime este proyecto.
-2. Abre Visual Studio Code.
-3. Usa **File > Open Workspace from File...**.
-4. Selecciona `LevelPercent.code-workspace`.
+1. Copia la carpeta `LevelPercent` en la carpeta de addons de World of Warcraft:
 
-## Instalación en WoW
+   - Retail: `World of Warcraft/_retail_/Interface/AddOns/LevelPercent/`
+   - Classic: `World of Warcraft/_classic_/Interface/AddOns/LevelPercent/`
 
-Copia la carpeta `LevelPercent` a una de estas rutas:
+2. En la pantalla de selección de personaje activa el addon `LevelPercent`.
 
-- Retail: `World of Warcraft/_retail_/Interface/AddOns/`
-- Classic: `World of Warcraft/_classic_/Interface/AddOns/`
+3. Si aparece como desactualizado, activa "Load out of date AddOns" o ajusta `## Interface` en `LevelPercent/LevelPercent.toc`.
 
-Después activa el addon desde la pantalla de personajes.
+Uso dentro del juego
 
-## Empaquetar el addon
+- `(/lp show)` — Mostrar el cuadro si está oculto.
+- `(/lp hide)` — Ocultar el cuadro.
+- `/lp lock` — Bloquear la posición.
+- `/lp unlock` — Desbloquear para mover.
+- `/lp reset` — Restaurar configuración por defecto.
+- `/lp text` — Alternar texto extra.
+- `/lp remaining` — Alternar XP restante.
+- `/lp decimals <0|1|2>` — Establecer decimales en el porcentaje.
 
-En VS Code puedes ejecutar:
+Mover y redimensionar
 
-- **Terminal > Run Build Task**
-- O presionar `Ctrl+Shift+B`
+- Arrastra con clic izquierdo sobre el cuadro para moverlo.
+- Usa la esquina inferior derecha para redimensionar.
 
-Esto ejecuta `scripts/package.py` y crea:
+Empaquetado (crear ZIP para instalar en WoW)
 
-```text
-dist/LevelPercent.zip
+Desde Visual Studio Code puedes ejecutar la tarea `Empaquetar addon ZIP` (o ejecutar manualmente):
+
+```powershell
+python scripts/package.py
 ```
 
-## Comandos dentro del juego
+Esto generará `dist/LevelPercent.zip` listo para copiar a la carpeta de addons.
 
-```text
-/lp show
-/lp hide
-/lp lock
-/lp unlock
-/lp reset
-/lp text
-/lp remaining
-/lp decimals 0
-/lp decimals 1
-/lp decimals 2
-```
+Abrir el proyecto en VS Code
 
-También acepta:
+1. Abre `LevelPercent.code-workspace` con Visual Studio Code.
+2. Ejecuta la tarea de empaquetado con `Ctrl+Shift+B` o desde el menú de tareas.
 
-```text
-/lp mostrar
-/lp ocultar
-/lp bloquear
-/lp desbloquear
-/lp reiniciar
-```
+Contribuir
+
+- Si quieres contribuir, crea un fork y abre un Pull Request con cambios claros.
+
+Soporte y licencia
+
+- Si encuentras problemas abre un issue en el repositorio.
+- Revisa si hay un archivo `LICENSE` para detalles de la licencia.
+
+---
+
+Si quieres, puedo también:
+
+- Añadir una sección de configuración más detallada.
+- Traducir mensajes internos del addon.
+
