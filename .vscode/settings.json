@@ -1,0 +1,28 @@
+{
+    "files.associations": {
+        "*.toc": "plaintext",
+        "*.lua": "lua"
+    },
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "Lua.runtime.version": "Lua 5.1",
+    "Lua.diagnostics.globals": [
+        "CreateFrame",
+        "UIParent",
+        "GameTooltip",
+        "UnitXP",
+        "UnitXPMax",
+        "UnitLevel",
+        "BreakUpLargeNumbers",
+        "SLASH_LEVELPERCENT1",
+        "SLASH_LEVELPERCENT2",
+        "SlashCmdList",
+        "print",
+        "GetTime",
+        "BackdropTemplateMixin"
+    ],
+    "Lua.workspace.checkThirdParty": false,
+    "Lua.telemetry.enable": false
+}

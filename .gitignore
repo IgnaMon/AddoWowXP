@@ -1,0 +1,5 @@
+dist/
+.vscode/.ropeproject/
+*.log
+.DS_Store
+Thumbs.db

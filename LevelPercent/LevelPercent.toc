@@ -1,0 +1,7 @@
+## Interface: 110200
+## Title: LevelPercent
+## Notes: Muestra tu avance de nivel con porcentaje, barra, XP restante, XP/h y ETA.
+## Author: M365 Copilot
+## Version: 1.1.0
+## SavedVariables: LevelPercentDB
+LevelPercent.lua
